@@ -1,0 +1,138 @@
+\documentclass{article} 
+
+\usepackage[brazil]{babel}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{booktabs}
+\usepackage{bm}
+\usepackage{float}
+\usepackage[margin=2cm]{geometry}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{steinmetz}
+
+\newcommand{\phasor}[2]{%
+  #1 \, \phase{\, \ang{#2}} \,
+}
+
+\newcommand{\nle}{%
+  \notag \\[4pt]
+}
+
+\setlength{\parindent}{0pt}
+
+\title{2ª Lista de Exercícios} 
+\author{Andevaldo da Encarnação Vitório} 
+% \date{\today}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Questão 1}
+
+There are a fuzzy rule and fuzzy sets.
+
+\begin{align*}
+             & R: \text{If } x \text{ is } A \text{ then } y \text{ is } C. \\
+  \text{or } & R: A(x) \rightarrow C(y)
+\end{align*}
+
+\begin{table}[H]
+  \centering
+  \begin{minipage}{.45\linewidth}
+    \centering
+    \begin{tabular}{ccccc}
+      \toprule
+      $A$     & $a_1$ & $a_2$ & $a_3$ & $a_4$ \\
+      \midrule
+      $\mu_A$ & 0.2   & 0.4   & 0.6   & 0.8   \\
+      \bottomrule
+    \end{tabular}
+    % \caption{Chip number}
+  \end{minipage}%
+  \begin{minipage}{.45\linewidth}
+    \centering
+    \begin{tabular}{cccc}
+      \toprule
+      $C$     & $y_1$ & $y_2$ & $y_3$ \\
+      \midrule
+      $\mu_C$ & 0.4   & 0.6   & 0.9   \\
+      \bottomrule
+    \end{tabular}
+    % \caption{Chip number}
+  \end{minipage}
+\end{table}
+
+Calculate the implementation relations $R(x, y)$ by using the min and product operators.
+
+\vspace*{12pt}
+\textit{\textbf{Solution:}} Using minimum T-norm operator:
+
+\begin{gather*}
+  R(x, y)_{\min} =
+  \begin{array}{c|ccc}
+        & y_1 & y_2 & y_3 \\
+    \hline
+    a_1 & 0.2 & 0.2 & 0.2 \\
+    a_2 & 0.4 & 0.4 & 0.4 \\
+    a_3 & 0.3 & 0.6 & 0.9 \\
+    a_4 & 0.4 & 0.6 & 0.8 \\
+  \end{array}
+\end{gather*}
+
+Using product T-norm operator:
+
+\begin{gather*}
+  R(x, y)_{\text{prod}} =
+  \begin{array}{c|ccc}
+        & y_1  & y_2  & y_3  \\
+    \hline
+    a_1 & 0.08 & 0.12 & 0.18 \\
+    a_2 & 0.16 & 0.24 & 0.36 \\
+    a_3 & 0.24 & 0.36 & 0.54 \\
+    a_4 & 0.32 & 0.48 & 0.72 \\
+  \end{array}
+\end{gather*}
+
+
+
+
+\section*{Questão 2}
+
+There is a fact $A'$ given for the rule in the above exercise.
+
+\begin{table}[H]
+  \centering
+  % \caption{Chip number}
+  \begin{tabular}{ccccc}
+    \toprule
+    $A'$       & $a_1$ & $a_2$ & $a_3$ & $a_4$ \\
+    \midrule
+    $\mu_{A'}$ & 0.5   & 0.6   & 0.7   & 1.0   \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Calculate the output $C'$ when you apply composition operations to the fact $A'$ and the rule $R(x, y)$.
+
+\textit{\textbf{Solução:}}
+\textit{\textbf{Resposta:}}
+
+\section*{Questão 3}
+
+There is a fuzzy rulebase with only one rule:
+
+\begin{align*}
+   & R: \text{If } x \text{ is } A \text{ then } y \text{ is } b \text{ then } z \text { is } C, \\
+   & \text{where } A = (0,1,2), B = (1,2,3) \text{ and } C=(5,6,7).                              \\
+   & \text{are triangular fuzzy sets.}
+\end{align*}
+
+\begin{enumerate}[label=\alph*)]
+  \item Calculate the output fuzzy sets when input is given as $x_0=1$ and $y_0=1.5$.
+  \item Find the output fuzzy set when input is given as $A'=(1, 2, 3)$ and $B'=(1.5, \, 2.5, \, 3.5)$
+\end{enumerate}
+
+\end{document}
